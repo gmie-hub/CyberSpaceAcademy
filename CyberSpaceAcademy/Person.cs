@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CyberSpaceAcademy.Acess_Modifiers
+namespace CyberSpaceAcademy
 {
     public class Person
     {
@@ -19,6 +19,6 @@ namespace CyberSpaceAcademy.Acess_Modifiers
         public DateTime GetBirthdate()
         {
             return _birthdate;
-        } 
+        }
     }
 }
