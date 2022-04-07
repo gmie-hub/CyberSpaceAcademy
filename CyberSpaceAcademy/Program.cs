@@ -18,33 +18,26 @@ namespace CyberSpaceAcademy
             //var person = new Person();
             //person.SetBirthdate(new DateTime(1999, 09, 02));
             //Console.WriteLine(person.GetBirthdate());
+            Console.Write("Enter F/M your gender: ");
+            var input = Console.ReadLine().ToUpper().Trim();
 
-            int day = 4;
-            switch (day)
+            switch (input)
             {
-                case 1:
-                    Console.WriteLine("Monday");
+                case "MALE":
+                    goto case "M";
+                case "FEMALE":
+                case "F":
+                    Console.WriteLine("You are female");
                     break;
-                case 2:
-                    Console.WriteLine("Tuesday");
-                    break;
-                case 3:
-                    Console.WriteLine("Wednesday");
-                    break;
-               
-                case 5:
-                    Console.WriteLine("Friday");
-                    break;
-                case 6:
-                    Console.WriteLine("Saturday");
-                    break;
-                case 7:
-                    Console.WriteLine("Sunday");
-                    break;
+                case "M":
+                    Console.WriteLine("You are a female");
+                    break ;
                 default:
-                    Console.WriteLine("We are looking forward to weekend");
+                    Console.WriteLine("Unknown gender");
                     break;
+                
             }
+            Console.WriteLine("End of main");
         }
     }
 }
