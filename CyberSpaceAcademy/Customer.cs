@@ -10,12 +10,11 @@ namespace CyberSpaceAcademy
     {
         public int Id;
         public string Name;
-        public List<Order> orders;
+        public readonly List<Order> Orders = new List<Order>();
         public Customer()
         { 
-            orders = new List<Order>();
+            Orders = new List<Order>();
         }
-
         public Customer(int id)
             :this()
         {
@@ -25,6 +24,10 @@ namespace CyberSpaceAcademy
             :this(id)
         {
             this.Name = name;
+        }
+        public void promote()
+        {
+            //.....
         }
     }
 }
