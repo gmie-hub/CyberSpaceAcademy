@@ -5,39 +5,44 @@ namespace CyberSpaceAcademy
 
     public class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
 
-            //var customer = new Customer(1);
-            //customer.Orders.Add(new Order());
-            //customer.Orders.Add(new Order());
+            string topic;
+            string category;
 
-            //customer.promote();
+            topic = "Inheritance";
 
-            //Console.WriteLine(customer.Orders.Count);
-            //var person = new Person();
-            //person.SetBirthdate(new DateTime(1999, 09, 02));
-            //Console.WriteLine(person.GetBirthdate());
-            Console.Write("Enter F/M your gender: ");
-            var input = Console.ReadLine().ToUpper().Trim();
-
-            switch (input)
+            switch (topic)
             {
-                case "MALE":
-                    goto case "M";
-                case "FEMALE":
-                case "F":
-                    Console.WriteLine("You are female");
+                case "Introduction to c#":
+                case "Variables":
+                case "Data types":
+
+                    category = "Basics";
                     break;
-                case "M":
-                    Console.WriteLine("You are a female");
+
+                case "Loops":
+                case "If statements":
+                case "Jump statements":
+
+                category = "Control flow";
                     break ;
-                default:
-                    Console.WriteLine("Unknown gender");
+
+                case "Class & Objects":
+                case "Inheritance":
+                case "Constructors":
+
+                    category = "OOPs Concepts";
                     break;
-                
+
+                default:
+                    category = "Not mentioned";
+                    break;
             }
-            Console.WriteLine("End of main");
+            Console.WriteLine("Category is " + category);
         }
     }
+
+   
 }

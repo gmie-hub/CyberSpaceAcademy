@@ -8,6 +8,6 @@ namespace CyberSpaceAcademy
 {
     public class Order
     {
-        
+
     }
 }
