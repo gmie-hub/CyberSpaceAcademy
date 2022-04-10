@@ -9,7 +9,7 @@ namespace ClassLearning
         {
             Point[] points = new Point[20];
             int i = 0;
-            
+             
             do
             {
                 points[i] = new Point() { X = i * 2, Y = i * 3 };
