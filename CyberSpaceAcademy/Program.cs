@@ -5,26 +5,32 @@ namespace CyberSpaceAcademy
 
     public class Geeks
     {
+       
         private Geeks()
         {
 
         }
 
-        public static int count_geeks;
-
-        public static int geeks_count()
+        public static int counter_geeks;
+        
+        public static int geeks_counter()
         {
-            return ++count_geeks;
+             return counter_geeks++; 
         }
-        static void Main()
+        public static void Main()
         {
 
-            Geeks.count_geeks = 99;
-            Geeks.geeks_count(); 
-            Console.WriteLine(Geeks.count_geeks);
+            Geeks.counter_geeks = 99;
+            Geeks.geeks_counter();
+            do
+            {
+                
+                Console.WriteLine(Geeks.counter_geeks);
+                counter_geeks++;
+            }
 
-            Geeks.geeks_count();
-            Console.WriteLine(Geeks.count_geeks);
+            while (counter_geeks <= 105);
+           
         }
     }
 }
