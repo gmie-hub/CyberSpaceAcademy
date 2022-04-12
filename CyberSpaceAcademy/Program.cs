@@ -3,24 +3,28 @@
 namespace CyberSpaceAcademy
 {
 
-    public class Program
+    public class Geeks
     {
-        static void Main(string[] args)
+        private Geeks()
         {
-         
-            //var customer = new Customer(1, "John");
 
-            //var order = new Order();
-            //customer.orders.Add(order);
+        }
 
-            //Console.WriteLine(customer.Id);
-            //Console.WriteLine(customer.Name);
+        public static int count_geeks;
 
-            var person = new Person();
-            person.SetBirthdate(new DateTime(1999, 09, 02));
-            Console.WriteLine(person.GetBirthdate());
-            
-          
+        public static int geeks_count()
+        {
+            return ++count_geeks;
+        }
+        static void Main()
+        {
+
+            Geeks.count_geeks = 99;
+            Geeks.geeks_count(); 
+            Console.WriteLine(Geeks.count_geeks);
+
+            Geeks.geeks_count();
+            Console.WriteLine(Geeks.count_geeks);
         }
     }
 }
