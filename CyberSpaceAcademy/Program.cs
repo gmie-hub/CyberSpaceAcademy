@@ -6,31 +6,28 @@ namespace CyberSpaceAcademy
     public class Geeks
     {
        
-        private Geeks()
+        static Geeks()
         {
-
+            Console.WriteLine("Static Constructor");
         }
 
-        public static int counter_geeks;
-        
-        public static int geeks_counter()
+        public Geeks(int i)
         {
-             return counter_geeks++; 
+            Console.WriteLine("Instance Constructor " + i);
+        }
+
+        public string geeks_details(string name, int id)
+        {
+            return "Name: " + name + "Id: " + id;
         }
         public static void Main()
         {
 
-            Geeks.counter_geeks = 99;
-            Geeks.geeks_counter();
-            do
-            {
-                
-                Console.WriteLine(Geeks.counter_geeks);
-                counter_geeks++;
-            }
+            Geeks obj = new Geeks(1);
+            Console.WriteLine(obj.geeks_details("GFG ", 1));
 
-            while (counter_geeks <= 105);
-           
+            Geeks obj1 = new Geeks(2);
+            Console.WriteLine(obj1.geeks_details("GeeksforGeeks ", 2));
         }
     }
 }
