@@ -2,32 +2,40 @@
 
 namespace CyberSpaceAcademy
 {
-
-    public class Geeks
+    public class GFG
     {
-       
-        static Geeks()
-        {
-            Console.WriteLine("Static Constructor");
-        }
 
-        public Geeks(int i)
-        {
-            Console.WriteLine("Instance Constructor " + i);
-        }
+        public string name;
+        public string subject;
 
-        public string geeks_details(string name, int id)
+        public void reader(string name, string subject)
         {
-            return "Name: " + name + "Id: " + id;
+            this.name = name;
+            this.subject = subject;
+            Console.WriteLine("My name is " + name);
+            Console.WriteLine("My favourite subject is " + subject);
         }
+    }
+
+    public class GeeksforGeeks : GFG
+    {
+
+        public GeeksforGeeks()
+        {
+
+            Console.WriteLine("GeeksforGeeks");
+        }
+    }
+
+    public class Sumo
+    {
         public static void Main()
         {
 
-            Geeks obj = new Geeks(1);
-            Console.WriteLine(obj.geeks_details("GFG ", 1));
-
-            Geeks obj1 = new Geeks(2);
-            Console.WriteLine(obj1.geeks_details("GeeksforGeeks ", 2));
+            GeeksforGeeks geeks = new GeeksforGeeks();
+            geeks.reader("Jimi", "C#");
         }
     }
+
+    
 }
