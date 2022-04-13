@@ -2,53 +2,42 @@
 
 namespace CyberSpaceAcademy
 {
-
-    public class EncapDemo
-    {
-
-        private string studentName;
-        private int studentAge;
-
-        public string Name
-        {
-            get
-            {
-                return studentName;
-            }
-
-            set
-            {
-                studentName = value;
-            }
-        }
-
-        public int Age
-        {
-
-            get
-            {
-                return studentAge;
-            }
-
-            set
-            {
-                studentAge = value;
-            }
-        }
-    }
-
-    public class Geek
+    public class Program
     {
 
         static void Main()
         {
+            People p = new People();
 
-            EncapDemo demo = new EncapDemo();
-            demo.Name = "Jimi";
-            demo.Age = 18;
-
-            Console.WriteLine("Name: " + demo.Name);
-            Console.WriteLine("Age: " + demo.Age);
+            Person person = p[1];
+            Console.WriteLine(person.Name);
         }
     }
+    public class Person
+    {
+
+        public string Name { get; set; }
+    }
+
+    public class People
+    {
+
+        private readonly Person[] names =
+        {
+
+            new Person{Name = "Bill Gates"},
+            new Person{Name = "Prolifik Lexzy"},
+            new Person{Name = "Scott Aniel"},
+            new Person{Name = "Matt Redman"}
+        };
+
+        public Person this[int position]
+        {
+            get
+            {
+                return names[position];
+            }
+        }
+    }
+
 }
