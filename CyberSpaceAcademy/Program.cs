@@ -2,40 +2,53 @@
 
 namespace CyberSpaceAcademy
 {
-    public class GFG
+
+    public class EncapDemo
     {
 
-        public string name;
-        public string subject;
+        private string studentName;
+        private int studentAge;
 
-        public void reader(string name, string subject)
+        public string Name
         {
-            this.name = name;
-            this.subject = subject;
-            Console.WriteLine("My name is " + name);
-            Console.WriteLine("My favourite subject is " + subject);
+            get
+            {
+                return studentName;
+            }
+
+            set
+            {
+                studentName = value;
+            }
+        }
+
+        public int Age
+        {
+
+            get
+            {
+                return studentAge;
+            }
+
+            set
+            {
+                studentAge = value;
+            }
         }
     }
 
-    public class GeeksforGeeks : GFG
+    public class Geek
     {
 
-        public GeeksforGeeks()
+        static void Main()
         {
 
-            Console.WriteLine("GeeksforGeeks");
+            EncapDemo demo = new EncapDemo();
+            demo.Name = "Jimi";
+            demo.Age = 18;
+
+            Console.WriteLine("Name: " + demo.Name);
+            Console.WriteLine("Age: " + demo.Age);
         }
     }
-
-    public class Sumo
-    {
-        public static void Main()
-        {
-
-            GeeksforGeeks geeks = new GeeksforGeeks();
-            geeks.reader("Jimi", "C#");
-        }
-    }
-
-    
 }
