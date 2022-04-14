@@ -3,66 +3,48 @@
 namespace ClassWork
 {
 
-    public delegate int ArithmeticOperationDelegate(int i, int j);
 
     public class Program
     {
         static void Main()
         {
+            Console.WriteLine("This can convert dollar, pounds and euros to naira");
+            
+            Console.WriteLine("Enter currency");
+            var currency = Console.ReadLine().ToUpper().Trim();
 
-           var delegateArray = new Func<int, int, int>[3];
+            Console.WriteLine("\nEnter the amount");
+            var amount =Convert.ToDouble( Console.ReadLine());
+            Console.WriteLine(" ");
+            const double toNaira = 580;
+            string d  = "Dollars";
+            string p = "Pounds";
+            string e = "Euros";
 
-
-            for (int i = 0; i < delegateArray.Length; i++)
+            switch (currency)
             {
+                case "DOLLAR":
+                case "D":
+                        Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, d); 
+                    break;
 
-                //switch (i)
-                //{
+                case "POUND":
+                case "P":
+                    Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, p);
+                    break;
 
-                //    case 0:
-                //        delegateArray[i] = ArithmeticOperation.Add;
-                //        break;
-                //    case 1:
-                //        delegateArray[i] = ArithmeticOperation.Minus;
-                //        break;
-                //    case 2:
-                //        delegateArray[i] = ArithmeticOperation.Multiply;
-                //        break;
-                //}
+                case "EURO":
+                case "E":
+                    Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, e);
+                    break;
 
-                if (i == 0)
-                delegateArray[i]  = ArithmeticOperation.Add;
-                else if (i == 1)
-                    delegateArray[i] = ArithmeticOperation.Minus;
-                else
-                    delegateArray[i] = ArithmeticOperation.Multiply;
+                default : Console.WriteLine("Invalid Input");
+                    break;
 
-                var del = delegateArray[i];
-                Console.WriteLine(del(12, 6));
             }
 
-
-        }
-    }
-
-    public class ArithmeticOperation
-    {
-
-        public static int Add(int i, int j)
-        {
-            return i + j;
         }
 
-        public static int Minus(int i, int j)
-        {
-            return i - j;
         }
-
-        public static int Multiply(int i, int j)
-        {
-            return i * j;
-        }
-    }
-    
-    
+   
 }
