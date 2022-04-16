@@ -4,53 +4,46 @@ using System;
 namespace CyberSpaceAcademy
 {
 
-    public class User
+    public class A
     {
 
         public string Name;
-        private string Location;
-
-        public User()
+        public void GetName()
         {
-            Console.WriteLine("Base class constructor");
-        }
-
-        public void GetUserInfo(string loc)
-        {
-            Location = loc;
             Console.WriteLine("Name: {0}", Name);
+        }
+    }
+
+    public class B : A
+    {
+
+        public string Location;
+        public void GetLocation()
+        {
             Console.WriteLine("Location: {0}", Location);
         }
     }
 
-    public class Details : User
+    public class C : B
     {
-
         public int Age;
-
-        public Details()
+        public void GetAge()
         {
-            Console.WriteLine("Derived class constructor");
-        }
-
-        public void GetDetails()
-        {
-
             Console.WriteLine("Age: {0}", Age);
         }
     }
 
     public class Program
     {
-
         public static void Main()
         {
-
-            Details d = new Details();
-            d.Name = "Olaosebikan OLuwafolajimi";
-            d.Age = 23;
-            d.GetUserInfo("Lagos");
-            d.GetDetails();
+            C c = new C();
+            c.Name = "Olaosebikan OLuwafolajimi";
+            c.Location = "Lagos";
+            c.Age = 23;
+            c.GetName();
+            c.GetLocation();
+            c.GetAge(); 
         }
     }
 }
