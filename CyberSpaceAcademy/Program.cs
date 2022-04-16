@@ -4,32 +4,43 @@ using System;
 namespace CyberSpaceAcademy
 {
 
-    public class A
+    public class Laptop
     {
 
-        public string Name;
-        public void GetName()
+        private string brand;
+        private string model;
+
+        public string Brand
         {
-            Console.WriteLine("Name: {0}", Name);
+            get { return brand; }
+            set { brand = value; }
         }
-    }
 
-    public class B : A
-    {
-
-        public string Location;
-        public void GetLocation()
+        public string Model
         {
-            Console.WriteLine("Location: {0}", Location);
+            get { return model; }
+            set { model = value; }
         }
-    }
 
-    public class C : B
-    {
-        public int Age;
-        public void GetAge()
+        public void LaptopDetails()
         {
-            Console.WriteLine("Age: {0}", Age);
+            Console.WriteLine("Brand: {0}", brand);
+            Console.WriteLine("Model: {0}", model);
+        }
+
+        public void LaptopKeyboard()
+        {
+            Console.WriteLine("Type using keyboard");
+        }
+
+        private void MotherBoardInfo()
+        {
+            Console.WriteLine("Motherboard inforrmation");
+        }
+
+        private void InternalProcesspr()
+        {
+            Console.WriteLine("Processor information");
         }
     }
 
@@ -37,13 +48,11 @@ namespace CyberSpaceAcademy
     {
         public static void Main()
         {
-            C c = new C();
-            c.Name = "Olaosebikan OLuwafolajimi";
-            c.Location = "Lagos";
-            c.Age = 23;
-            c.GetName();
-            c.GetLocation();
-            c.GetAge(); 
+            Laptop l = new();
+            l.Brand = "Hp";
+            l.Model = "Elite Book folio 9470m";
+            l.LaptopDetails();
+            l.LaptopKeyboard();
         }
     }
 }
