@@ -4,55 +4,28 @@ using System;
 namespace CyberSpaceAcademy
 {
 
-    public class Laptop
+    public class Calculate
     {
-
-        private string brand;
-        private string model;
-
-        public string Brand
+        public void AddNumbers(int a, int b)
         {
-            get { return brand; }
-            set { brand = value; }
+            Console.WriteLine("a + b = {0}", a + b);
         }
 
-        public string Model
+        public void AddNumbers(int a, int b, int c)
         {
-            get { return model; }
-            set { model = value; }
-        }
-
-        public void LaptopDetails()
-        {
-            Console.WriteLine("Brand: {0}", brand);
-            Console.WriteLine("Model: {0}", model);
-        }
-
-        public void LaptopKeyboard()
-        {
-            Console.WriteLine("Type using keyboard");
-        }
-
-        private void MotherBoardInfo()
-        {
-            Console.WriteLine("Motherboard inforrmation");
-        }
-
-        private void InternalProcesspr()
-        {
-            Console.WriteLine("Processor information");
+            Console.WriteLine("a + b + c = {0}", a + b + c);
         }
     }
 
     public class Program
     {
+
         public static void Main()
         {
-            Laptop l = new();
-            l.Brand = "Hp";
-            l.Model = "Elite Book folio 9470m";
-            l.LaptopDetails();
-            l.LaptopKeyboard();
+
+            Calculate calc = new Calculate();
+            calc.AddNumbers(1, 2);
+            calc.AddNumbers(1, 2, 3);
         }
     }
 }
