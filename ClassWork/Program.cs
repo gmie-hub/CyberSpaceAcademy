@@ -20,22 +20,33 @@ namespace ClassWork
             string d  = "Dollars";
             string p = "Pounds";
             string e = "Euros";
+            string dol = "Dollar";
+            string eu = "Euro";
+            string pd = "pounds";
 
             switch (currency)
             {
                 case "DOLLAR":
                 case "D":
-                        Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, d); 
+                    if (amount <= 1)
+                        Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, dol);
+                    else
+                        Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, d);
                     break;
 
                 case "POUND":
                 case "P":
-                    Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, p);
+                    if(amount <= 1)
+                        Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, pd);
+                    else
+                        Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, p);
                     break;
 
                 case "EURO":
                 case "E":
-                    Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, e);
+                    if( amount <= 1)
+                        Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, eu);
+                        Console.WriteLine(amount + "{0}" + " = " + amount * toNaira, e);
                     break;
 
                 default : Console.WriteLine("Invalid Input");

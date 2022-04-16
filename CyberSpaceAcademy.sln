@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyberSpaceAcademy", "CyberSpaceAcademy\CyberSpaceAcademy.csproj", "{3F72AAAE-F5FD-4713-BEE7-7A97D415B72F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork", "ClassWork\ClassWork.csproj", "{B028647A-5B57-4BC9-AB67-61BD193F96D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassWork", "ClassWork\ClassWork.csproj", "{B028647A-5B57-4BC9-AB67-61BD193F96D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary.recap", "ClassLibrary.recap\ClassLibrary.recap.csproj", "{E15A01D8-E4F6-4100-A519-9E8394B600FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B028647A-5B57-4BC9-AB67-61BD193F96D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B028647A-5B57-4BC9-AB67-61BD193F96D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B028647A-5B57-4BC9-AB67-61BD193F96D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E15A01D8-E4F6-4100-A519-9E8394B600FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E15A01D8-E4F6-4100-A519-9E8394B600FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E15A01D8-E4F6-4100-A519-9E8394B600FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E15A01D8-E4F6-4100-A519-9E8394B600FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

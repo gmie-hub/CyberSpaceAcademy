@@ -1,72 +1,70 @@
-﻿using System;
+﻿using ClassLibrary.recap;
+using System;
 
 namespace CyberSpaceAcademy
 {
-    public delegate int Arithmetic(int first, int second);
 
-    public delegate void ArithmeticDelegate();
-
-    public delegate Shape DrawDelegate();
-
-    public delegate void ShapeDelegate(int i);
-
-    public class Shape
+    public interface Animal
     {
+        string Name { get; set; }
+        int Age { get; set; }
+        AnimalTypes Type { get; set; }
+
+
+
+        //public static void Main()
+        //{
+        //    Animal animal = new Animal() { Name = "Goat", Age = 30};
+        //    Console.WriteLine(animal.Name);
+        //    Console.WriteLine(animal.Age);
+        //}
+        //public static void Main()
+        //{
+        //    int[] num = new[] { 1, 2, 3, 4, 5 };
+        //    PrintNumbers(num);
+
+        //}
+
+        //public static void PrintNumbers(int[] numbers)
+        //{
+        //    for (int i = 0; i < numbers.Length; i++)
+        //    {
+        //        Console.WriteLine(numbers[i]);
+        //    }
+        //}
+
+        //private string _name;
+        //private int _age;
+        //    public Animal()
+        //    {
+        //        Console.WriteLine("Constructor called");
+        //    }
+
+        //    public string Name 
+        //    { 
+        //        get 
+        //        { 
+        //            return _name; 
+        //        }
+        //        set
+        //        {
+        //            _name = value;
+        //        }
+        //    }
+
+        //    public int Age
+        //    {
+        //        get
+        //        {
+        //            return _age;
+        //        }
+        //        set 
+        //        { 
+        //            _age = value; 
+        //        }
+        //    }
+        //}
+
 
     }
-
-    public class Triangle : Shape
-    {
-
-    }
-    public class Program
-    {
-
-        static Triangle DrawTriangle()
-        {
-            return new Triangle();
-        }
-        static void Main()
-        {
-
-            ArithmeticDelegate arithmeticDelegate = () =>
-            {
-
-            };
-            DrawDelegate drawDelegate = DrawTriangle;
-
-            Arithmetic del = Add;
-            //del += Minus;
-
-            del += delegate (int first, int second)
-            {
-                return first + second;
-            };
-
-            del += (first, second) =>
-            {
-                return second + first;
-            };
-
-            del += (first, second) => second + first;
-
-            
-            var result = del(39, 8);
-            Console.WriteLine(result);
-        }
-
-        static int Add(int a, int b)
-        {
-            return a + b;
-        }
-
-        static int Minus(int a, int b)
-        {
-            return a - b;
-        }
-
-    }
-
-
-
 }
