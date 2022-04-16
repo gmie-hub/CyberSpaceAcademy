@@ -18,8 +18,8 @@ namespace CyberSpaceAcademy
 
         public void GetUserDetails()
         {
-            Console.WriteLine("Name: {0}", name);
-            Console.WriteLine("Location: {0}", location);
+            Console.WriteLine("Name: {0} \nLocation: {1}", name, location);
+           
             Console.WriteLine("Marks: {0}", Exams.GetPercentage(this));
         }
     }
@@ -28,8 +28,8 @@ namespace CyberSpaceAcademy
     {
         public static double GetPercentage(User u)
         {
-            double i = ((double)470 / 600) * 100;
-            return (i);
+            return ((double)470 / 600) * 100;
+           
         }
     }
 
