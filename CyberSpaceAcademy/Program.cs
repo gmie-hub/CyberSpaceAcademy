@@ -4,45 +4,46 @@ using System;
 namespace CyberSpaceAcademy
 {
 
-    public class User
+    public class Employee
     {
 
-        public string name, location;
-        public long marks;
+        private string name, alias;
+        private decimal salary = 3000.00m;
 
-        public User(string name, string location)
+        public Employee(string name, string alias)
         {
             this.name = name;
-            this.location = location;
+            this.alias = alias;
         }
 
-        public void GetUserDetails()
+        public void PrintEmployee()
         {
-            Console.WriteLine("Name: {0} \nLocation: {1}", name, location);
-           
-            Console.WriteLine("Marks: {0}", Exams.GetPercentage(this));
+
+            Console.WriteLine("Name: {0} \nAlias: {1}", name, alias);
+            Console.WriteLine("Taxes: {0:C}", Tax.CalcTax(this));
+        }
+
+        public decimal Salary
+        {
+            get { return salary; }
         }
     }
 
-    public class Exams
+    public class Tax
     {
-        public static double GetPercentage(User u)
+
+        public static decimal CalcTax(Employee e)
         {
-            return ((double)470 / 600) * 100;
-           
+            return 0.08m * e.Salary;
         }
     }
 
-    public class program
+    public class Program
     {
-
         public static void Main()
         {
-
-            User u = new User("Olaosebikan Oluwafolajimi", "Lagos");
-            u.GetUserDetails();
-            Console.WriteLine("\npress enter key to exit");
-            Console.ReadLine(); 
+            Employee e = new Employee("Jimi", "Gmie");
+            e.PrintEmployee();
         }
     }
 }
