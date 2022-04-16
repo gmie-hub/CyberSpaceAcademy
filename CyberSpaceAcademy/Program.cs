@@ -4,46 +4,53 @@ using System;
 namespace CyberSpaceAcademy
 {
 
-    public class Employee
+    public class User
     {
 
-        private string name, alias;
-        private decimal salary = 3000.00m;
+        public string Name;
+        private string Location;
 
-        public Employee(string name, string alias)
+        public User()
         {
-            this.name = name;
-            this.alias = alias;
+            Console.WriteLine("Base class constructor");
         }
 
-        public void PrintEmployee()
+        public void GetUserInfo(string loc)
         {
-
-            Console.WriteLine("Name: {0} \nAlias: {1}", name, alias);
-            Console.WriteLine("Taxes: {0:C}", Tax.CalcTax(this));
-        }
-
-        public decimal Salary
-        {
-            get { return salary; }
+            Location = loc;
+            Console.WriteLine("Name: {0}", Name);
+            Console.WriteLine("Location: {0}", Location);
         }
     }
 
-    public class Tax
+    public class Details : User
     {
 
-        public static decimal CalcTax(Employee e)
+        public int Age;
+
+        public Details()
         {
-            return 0.08m * e.Salary;
+            Console.WriteLine("Derived class constructor");
+        }
+
+        public void GetDetails()
+        {
+
+            Console.WriteLine("Age: {0}", Age);
         }
     }
 
     public class Program
     {
+
         public static void Main()
         {
-            Employee e = new Employee("Jimi", "Gmie");
-            e.PrintEmployee();
+
+            Details d = new Details();
+            d.Name = "Olaosebikan OLuwafolajimi";
+            d.Age = 23;
+            d.GetUserInfo("Lagos");
+            d.GetDetails();
         }
     }
 }
