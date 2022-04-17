@@ -4,34 +4,41 @@ using System;
 namespace CyberSpaceAcademy
 {
 
-    public class User
+    public class BClass
     {
-        public string name = "Jimi";
-        public string location = "Lagos";
-        public int age = 20;
-
-        public virtual void GetInfo()
+        public BClass()
         {
-            Console.WriteLine("Name: {0}", name);
-            Console.WriteLine("Location: {0}", location);
+            Console.WriteLine("Welcome To Tutlane");
+        }
+
+        public BClass(string a, string b)
+        {
+            Console.WriteLine("Name: {0}", a);
+            Console.WriteLine("Location: {0}", b);
         }
     }
 
-    public class Details : User
+    public class DClass : BClass
     {
-        public override void GetInfo()
+        public DClass() : base()
         {
-            base.GetInfo();
-            Console.WriteLine("Age: {0}", age);
+
+        }
+
+        public DClass(string x, string y) : base(x, y)
+        {
+
         }
     }
 
     public class Program
     {
+
         public static void Main()
         {
-            Details d = new Details();
-            d.GetInfo();
+
+            DClass d = new();    
+            DClass d1 = new("Jimi", "Lagos");
         }
     }
 }
