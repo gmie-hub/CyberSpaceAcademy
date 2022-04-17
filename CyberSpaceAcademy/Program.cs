@@ -6,16 +6,22 @@ namespace CyberSpaceAcademy
 
     abstract public class Info
     {
-        abstract public void GetDetails(string x, string y, int z);
+        public void Welcome()
+        {
+            Console.WriteLine("Welcome to tutlane");
+        }
+        public int age = 32;
+        abstract public void GetDetails(string x, string y);
     }
 
     public class User : Info
     {
-        public override void GetDetails(string a, string b, int c)
+        public override void GetDetails(string a, string b)
         {
+            Welcome();  
             Console.WriteLine("Name: {0}", a);
             Console.WriteLine("Location: {0}", b);
-            Console.WriteLine("Age: {0}", c);
+            Console.WriteLine("Age: {0}", age);
         }
     }
 
@@ -25,7 +31,7 @@ namespace CyberSpaceAcademy
         {
             User u = new User();
             Console.WriteLine("****Abstract Class Example****");
-            u.GetDetails("Jimi", "Lagos", 30);
+            u.GetDetails("Jimi", "Lagos");
         }
     }
 }
