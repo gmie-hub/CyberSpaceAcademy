@@ -4,16 +4,21 @@ using System;
 namespace CyberSpaceAcademy
 {
 
-    public class Calculate
+    public  class BClass
     {
-        public void AddNumbers(int a, int b)
-        {
-            Console.WriteLine("a + b = {0}", a + b);
-        }
 
-        public void AddNumbers(int a, int b, int c)
+        public virtual void GetInfo()
         {
-            Console.WriteLine("a + b + c = {0}", a + b + c);
+            Console.WriteLine("Learn C# Tutorial");
+        }
+    }
+
+    public class DClass : BClass
+    {
+
+        public override void GetInfo()
+        {
+            Console.WriteLine("Welcome To Tutlane");
         }
     }
 
@@ -22,10 +27,11 @@ namespace CyberSpaceAcademy
 
         public static void Main()
         {
-
-            Calculate calc = new Calculate();
-            calc.AddNumbers(1, 2);
-            calc.AddNumbers(1, 2, 3);
+            DClass d = new DClass();
+            d.GetInfo();
+            
+            BClass b = new BClass();
+            b.GetInfo();
         }
     }
 }
