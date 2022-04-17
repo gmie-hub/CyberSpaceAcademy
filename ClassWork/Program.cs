@@ -2,8 +2,6 @@
 
 namespace ClassWork
 {
-
-
     public class Program
     {
         static void Main()
@@ -56,6 +54,6 @@ namespace ClassWork
 
         }
 
-        }
+    }
    
 }
