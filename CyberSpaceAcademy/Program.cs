@@ -4,34 +4,22 @@ using System;
 namespace CyberSpaceAcademy
 {
 
-    interface IName
+    interface IUser
     {
-        public void GetName(string x);
+        public void GetDetails(string x);
     }
-
-    interface ILocation
+    public class User : IUser
     {
-        public void GetLocation(string x);
-    }
-
-    interface IAge
-    {
-        public void GetAge(int x);
-    }
-
-    public class User : IName, ILocation, IAge
-    {
-        public void GetName(string a)
+        public void GetDetails(string a)
         {
             Console.WriteLine("Name: {0}", a);
         }
-        public void GetLocation(string a)
+    }
+    public class User1 : IUser
+    {
+        public void GetDetails(string a)
         {
             Console.WriteLine("Location: {0}", a);
-        }
-        public void GetAge(int a)
-        {
-            Console.WriteLine("Age: {0}", a);
         }
     }
     public class Program
@@ -39,9 +27,11 @@ namespace CyberSpaceAcademy
         public static void Main()
         {
             User u = new User();
-            u.GetName("Jimi");
-            u.GetLocation("Lagos");
-            u.GetAge(23);
+            u.GetDetails("Jimi");
+
+            User1 u1 = new User1();
+            u1.GetDetails("Lagos");
+           
         }
     }
 }
