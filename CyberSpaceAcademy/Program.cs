@@ -4,34 +4,44 @@ using System;
 namespace CyberSpaceAcademy
 {
 
-    abstract public class Info
+    interface IName
     {
-        public void Welcome()
-        {
-            Console.WriteLine("Welcome to tutlane");
-        }
-        public int age = 32;
-        abstract public void GetDetails(string x, string y);
+        public void GetName(string x);
     }
 
-    public class User : Info
+    interface ILocation
     {
-        public override void GetDetails(string a, string b)
+        public void GetLocation(string x);
+    }
+
+    interface IAge
+    {
+        public void GetAge(int x);
+    }
+
+    public class User : IName, ILocation, IAge
+    {
+        public void GetName(string a)
         {
-            Welcome();  
             Console.WriteLine("Name: {0}", a);
-            Console.WriteLine("Location: {0}", b);
-            Console.WriteLine("Age: {0}", age);
+        }
+        public void GetLocation(string a)
+        {
+            Console.WriteLine("Location: {0}", a);
+        }
+        public void GetAge(int a)
+        {
+            Console.WriteLine("Age: {0}", a);
         }
     }
-
     public class Program
     {
         public static void Main()
         {
             User u = new User();
-            Console.WriteLine("****Abstract Class Example****");
-            u.GetDetails("Jimi", "Lagos");
+            u.GetName("Jimi");
+            u.GetLocation("Lagos");
+            u.GetAge(23);
         }
     }
 }
