@@ -26,10 +26,14 @@ namespace CyberSpaceAcademy
         public static void Main()
         {
             MathOperation m = new MathOperation();
-            SampleDelegate dgt = m.Add;
-            dgt += m.Subtract;
-            dgt += m.Multiply;
-            dgt(10, 9);
+            SampleMethod(m.Add, 10, 9);
+            SampleMethod(m.Subtract, 10, 9);
+            SampleMethod(m.Multiply, 10, 9);
+        }
+
+        public static void SampleMethod(SampleDelegate dgt, int a, int b)
+        {
+            dgt(a, b);  
         }
     }
 }
