@@ -3,23 +3,22 @@ using System;
 
 namespace CyberSpaceAcademy
 {
-    public class GenericClass<T>
+    public class SampleClass
     {
-        public T msg;
-        public void GenericMethod(T name, T location)
+        public void GMethod<T>(T a, T b)
         {
-            Console.WriteLine("{0}", msg);
-            Console.WriteLine("Name: {0}", name);
-            Console.WriteLine("Location: {0}", location);
+            Console.WriteLine("Param1: {0}", a);
+            Console.WriteLine("Param: {0}", b);
         }
     }    
     public class Program
     {
         public static void Main()
         {
-            GenericClass<string> gclass = new GenericClass<string>();
-            gclass.msg = "Welcome to Tutlane";
-            gclass.GenericMethod("Jimi", "Lagos");
+            SampleClass s = new SampleClass();
+            s.GMethod<int>(1, 2);
+            s.GMethod("Jimi", "Lagos");
+            Console.ReadLine();
         }
     }
 }
