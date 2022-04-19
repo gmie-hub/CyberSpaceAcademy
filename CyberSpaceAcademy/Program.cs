@@ -3,37 +3,74 @@ using System;
 
 namespace CyberSpaceAcademy
 {
-    public delegate void SampleDelegate(int a, int b);
-    public class MathOperation
+    public class Maths
     {
 
+        public delegate void SampleDelegate();
+        public event SampleDelegate SampleEvent;
         public void Add(int a, int b)
         {
-            Console.WriteLine("Add result: {0}", a + b);
+            if (SampleEvent != null)
+            {
+                SampleEvent();
+                Console.WriteLine("Add result: {0}", a + b);
+            }
+            else
+            {
+                Console.WriteLine("Not subscribed to event");
+            }
         }
 
         public void Subtract(int x, int y)
         {
-            Console.WriteLine("Subtract result: {0}", x - y);
+            if(SampleEvent != null)
+            {
+                SampleEvent();
+                Console.WriteLine("subtract result: {0}", x - y);
+            }
+            else
+            {
+                Console.WriteLine("Not subscribed to event");
+            }
         }
-        public void Multiply(int x, int y)
+    }
+    public class Operations
+    {
+
+        Maths m;
+        public int a { get; set; }
+        public int b { get; set; }
+        public Operations(int x, int y)
         {
-            Console.WriteLine("Multiply result {0}", x * y);
+            m = new Maths();
+            m.SampleEvent += SampleEventHandler;
+            a = x;
+            b = y;
+        }
+
+        public void SampleEventHandler()
+        {
+            Console.WriteLine("SampleEvent Handler: Calling Method");
+        }
+
+        public void AddOperation()
+        {
+            m.Add(a, b);
+        }
+
+        public void SubOperation()
+        {
+            m.Subtract(a, b);
         }
     }
     public class Program
     {
         public static void Main()
         {
-            MathOperation m = new MathOperation();
-            SampleMethod(m.Add, 10, 9);
-            SampleMethod(m.Subtract, 10, 9);
-            SampleMethod(m.Multiply, 10, 9);
-        }
-
-        public static void SampleMethod(SampleDelegate dgt, int a, int b)
-        {
-            dgt(a, b);  
+            Console.WriteLine("****Event Example****");
+            Operations op = new Operations(10, 9);
+            op.AddOperation();
+            op.SubOperation();
         }
     }
 }
