@@ -71,6 +71,7 @@ namespace CyberSpaceAcademy
             Operations op = new Operations(10, 9);
             op.AddOperation();
             op.SubOperation();
+            Console.ReadLine(); 
         }
     }
 }
