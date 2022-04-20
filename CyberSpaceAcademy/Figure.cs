@@ -44,5 +44,15 @@ namespace CyberSpaceAcademy
             return a;
         }
 
+        public static bool operator >=(Figure left, Figure right)
+        {
+            return left.X >= right.X;
+        }
+
+        public static bool operator <=(Figure left, Figure right)
+        {
+            return left.X <= right.X;
+        }
+
     }
 }

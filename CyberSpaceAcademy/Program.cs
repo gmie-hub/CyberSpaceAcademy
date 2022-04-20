@@ -23,14 +23,17 @@ namespace CyberSpaceAcademy
             //Console.WriteLine(output);
 
             Figure o = new Figure() {X = 100};
-            Figure o2 = new Figure() {X = 100};
-            Figure o3 = new Figure() {X = 20};
+            Figure o2 = new Figure() {X = 10};
+            Figure o3 = new Figure() {X = 100};
             Figure o4 = new Figure() {X = 30};
             Figure plus = o + (o2 + o3) - o4;
             Console.WriteLine(plus.X);
 
             bool isEqual = o == o2;
             Console.WriteLine(isEqual);
+
+            bool isEqual2 = o2 >= o3;
+            Console.WriteLine(isEqual2);
         }
     }
 }
