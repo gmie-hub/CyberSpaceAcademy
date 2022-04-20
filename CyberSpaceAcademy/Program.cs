@@ -36,9 +36,9 @@ namespace CyberSpaceAcademy
             //Console.WriteLine(isEqual2);
 
             int[] array = new int[5] {1, 2, 3, 4, 5};
-            for (int i = 0; i < array.Length; i++)
+            foreach (int i in array)
             {
-                Console.WriteLine(array[i]);
+                Console.WriteLine(i);
             }
         }
     }
