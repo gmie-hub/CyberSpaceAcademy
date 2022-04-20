@@ -35,8 +35,23 @@ namespace CyberSpaceAcademy
             //bool isEqual2 = o2 >= o3;
             //Console.WriteLine(isEqual2);
 
-            int[] array = new int[5] {1, 2, 3, 4, 5};
+            int[] array = new int[5] {1, 4, 2, 5, 3};
+            Console.WriteLine("****Initial array element");
             foreach (int i in array)
+            {
+                Console.WriteLine(i);
+            }
+
+            Array.Sort(array);
+            Console.WriteLine("****Array after sorting");
+            foreach(int i in array)
+            {
+                Console.WriteLine(i);
+            }
+
+            Array.Reverse(array);
+            Console.WriteLine("****Array after reverse");
+            foreach(int i in array)
             {
                 Console.WriteLine(i);
             }
