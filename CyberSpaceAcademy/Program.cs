@@ -3,27 +3,34 @@ using System;
 
 namespace CyberSpaceAcademy
 {
-    public delegate T SampleDelegate<T>(T a, T b);
-    public class MathOperation
-    {
-        public int Add(int a, int b)
-        {
-            return a + b;
-        }
-        public int Subtract(int x, int y)
-        {
-            return x - y;
-        }
-    }    
+   
     public class Program
     {
         public static void Main()
         {
-            MathOperation m = new MathOperation();
-            SampleDelegate<int> dlgt = new SampleDelegate<int>(m.Add);
-            Console.WriteLine("Addition result: " + dlgt(10, 9));
-            dlgt = m.Subtract;
-            Console.WriteLine("Subtraction Result:" + dlgt(10, 9));
+            //peg:
+            //string input = Console.ReadLine();
+            //Nullable<int> a = int.TryParse(input, out int age) ? age : 0;
+
+            //int i = a.HasValue ? a.Value : 0;
+
+            //Console.WriteLine(i);
+            //goto peg;
+
+            //string input = "Hi";
+            //string output = input ?? "String is null";
+
+            //Console.WriteLine(output);
+
+            Figure o = new Figure() {X = 100};
+            Figure o2 = new Figure() {X = 100};
+            Figure o3 = new Figure() {X = 20};
+            Figure o4 = new Figure() {X = 30};
+            Figure plus = o + (o2 + o3) - o4;
+            Console.WriteLine(plus.X);
+
+            bool isEqual = o == o2;
+            Console.WriteLine(isEqual);
         }
     }
 }
