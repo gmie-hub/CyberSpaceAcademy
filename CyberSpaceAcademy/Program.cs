@@ -3,22 +3,27 @@ using System;
 
 namespace CyberSpaceAcademy
 {
-    public class SampleClass
+    public delegate T SampleDelegate<T>(T a, T b);
+    public class MathOperation
     {
-        public void GMethod<T>(T a, T b)
+        public int Add(int a, int b)
         {
-            Console.WriteLine("Param1: {0}", a);
-            Console.WriteLine("Param: {0}", b);
+            return a + b;
+        }
+        public int Subtract(int x, int y)
+        {
+            return x - y;
         }
     }    
     public class Program
     {
         public static void Main()
         {
-            SampleClass s = new SampleClass();
-            s.GMethod<int>(1, 2);
-            s.GMethod("Jimi", "Lagos");
-            Console.ReadLine();
+            MathOperation m = new MathOperation();
+            SampleDelegate<int> dlgt = new SampleDelegate<int>(m.Add);
+            Console.WriteLine("Addition result: " + dlgt(10, 9));
+            dlgt = m.Subtract;
+            Console.WriteLine("Subtraction Result:" + dlgt(10, 9));
         }
     }
 }

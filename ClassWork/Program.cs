@@ -6,12 +6,12 @@ namespace ClassWork
     {
         static void Main()
         {
-            Console.WriteLine("This can convert dollar, pounds and euros to naira");
+            Console.WriteLine("This application convert dollar, pound and euro to naira");
             
             Console.WriteLine("Enter currency");
             var currency = Console.ReadLine().ToUpper().Trim();
 
-            Console.WriteLine("\nEnter the amount");
+            Console.WriteLine("\nEnter the amount in digit");
             var amount =Convert.ToDouble( Console.ReadLine());
             Console.WriteLine(" ");
             const double toNaira = 580;
