@@ -59,8 +59,8 @@ namespace ClassWork
             arrlist.Add(20.5);
             arrlist.Add("Tutlane");
 
-            Console.WriteLine("ArrayList Count: " + arrlist.Count);
-            Console.WriteLine("ArrayList Capacity: " + arrlist.Capacity);
+            ArrayList arrlist1 = new ArrayList() {10, "Hi"}; 
+            arrlist.AddRange(arrlist1 );
 
             foreach(var item in arrlist)
             {
