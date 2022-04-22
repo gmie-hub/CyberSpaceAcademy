@@ -53,14 +53,23 @@ namespace ClassWork
             //}
 
 
-            string[] names = { "Jimi", "Sola", "Jummy", "Olabisi" };
-            UserDetails(names);
+            int[,] arr = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+            GetDetails(arr);
         }
 
-        public static void UserDetails(string[] arr)
+        public static void GetDetails(int[,] arr)
         {
-            for (int i = 0; i < arr.Length; i++)
-                Console.WriteLine("Element[{0}]: {1} ", i, arr[i]);
+           
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                Console.Write("Element[{0}]: {1}", i, "{");
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write("{0}{1}", arr[i, j], j == (arr.GetLength(1) - 1) ? "" : ",");
+                }
+                Console.WriteLine("}");
+            }
+            
         }
     }
 }
