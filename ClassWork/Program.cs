@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace ClassWork
 {
@@ -52,24 +53,19 @@ namespace ClassWork
 
             //}
 
+            ArrayList arrlist = new ArrayList();
+            arrlist.Add("Welcome");
+            arrlist.Add(100);
+            arrlist.Add(20.5);
+            arrlist.Add("Tutlane");
 
-            int[,] arr = new int[,] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
-            GetDetails(arr);
-        }
+            Console.WriteLine("ArrayList Count: " + arrlist.Count);
+            Console.WriteLine("ArrayList Capacity: " + arrlist.Capacity);
 
-        public static void GetDetails(int[,] arr)
-        {
-           
-            for (int i = 0; i < arr.GetLength(0); i++)
+            foreach(var item in arrlist)
             {
-                Console.Write("Element[{0}]: {1}", i, "{");
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Console.Write("{0}{1}", arr[i, j], j == (arr.GetLength(1) - 1) ? "" : ",");
-                }
-                Console.WriteLine("}");
+                Console.WriteLine(item);
             }
-            
         }
     }
 }
