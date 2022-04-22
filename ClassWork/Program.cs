@@ -56,12 +56,22 @@ namespace ClassWork
             ArrayList arrlist = new ArrayList();
             arrlist.Add("Welcome");
             arrlist.Add(100);
-            arrlist.Add(20.5);
+            arrlist.Add(20.5f);
             arrlist.Add("Tutlane");
 
-            ArrayList arrlist1 = new ArrayList() {10, "Hi"}; 
-            arrlist.AddRange(arrlist1 );
+            string msg = (string)arrlist[0];
+            float num = (float)arrlist[2];
 
+            Console.WriteLine("Element at [0]: " + msg);
+            Console.WriteLine("Element at [2]: " + num);
+
+            Console.WriteLine("***Access element with for loop***");
+            for(int i = 0; i < arrlist.Count; i++)
+            {
+                Console.WriteLine(arrlist[i]);
+            }
+
+            Console.WriteLine("***Access element with foreach loop***");
             foreach(var item in arrlist)
             {
                 Console.WriteLine(item);
