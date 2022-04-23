@@ -61,10 +61,11 @@ namespace ClassWork
             que.Enqueue(100);
 
             Console.WriteLine("Number of elements in a queue: {0}", que.Count);
-            foreach (var item in que)
-            {
-                Console.WriteLine(item);
-            }
+
+            Console.WriteLine(que.Peek());
+            Console.WriteLine(que.Peek());
+            Console.WriteLine(que.Peek());
+            Console.WriteLine("Number of elements in a queue: {0}", que.Count);
         }
     }
 }
