@@ -60,27 +60,9 @@ namespace ClassWork
             htbl.Add(2, 10);
             htbl[3] = "Tutorials";
 
-            htbl.Remove("msg");
-            htbl.Remove(1);
-
-          
-            Console.WriteLine("***Access element using foreach loop");
-            foreach(DictionaryEntry item in htbl)
-            {
-                Console.WriteLine("Key = {0}, Value = {1}", item.Key, item.Value);    
-            }
-
-            Console.WriteLine("***Hashtable keys***");
-            foreach(var item in htbl.Keys)
-            {
-                Console.WriteLine("Key = {0}", item);
-            }
-
-            Console.WriteLine("***Hashtable value***");
-            foreach(var item in htbl.Values)
-            {
-                Console.WriteLine("Value = {0}", item);
-            }
+            Console.WriteLine("Contains Key 4: {0}", htbl.Contains(4));
+            Console.WriteLine("Contains key 2: {0}", htbl.ContainsKey(2));
+            Console.WriteLine("Cotains Value 'tutlane': {0}", htbl.ContainsValue("Tutlane"));
         }
     }
 }
