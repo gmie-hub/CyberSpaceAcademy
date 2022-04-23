@@ -53,15 +53,19 @@ namespace ClassWork
 
             //}
            
-            Queue que = new Queue();
-            que.Enqueue("Welcome");
-            que.Enqueue("Tutlane");
-            que.Enqueue(20.5f);
-            que.Enqueue(10);
-            que.Enqueue(100);
+           Stack stk = new Stack(); 
+            stk.Push("Welcome");
+            stk.Push("Tutlane");
+            stk.Push(20.5f);
+            stk.Push(10);
+            stk.Push(null);
+            stk.Push(100);
 
-            Console.WriteLine("Contains element 4: {0}", que.Contains(4));
-            Console.WriteLine("contains element 100: {0}", que.Contains(100));
+            Console.WriteLine("Number of elements in the stack: {0}", stk.Count);
+            foreach (var item in stk)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
