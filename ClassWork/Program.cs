@@ -52,17 +52,28 @@ namespace ClassWork
             //        break;
 
             //}
+           
+            Hashtable htbl = new Hashtable();
+            htbl.Add("msg", "Welcome");
+            htbl.Add("site", "tutlane");
+            htbl.Add(1, 20.5);
+            htbl.Add(2, null);
+            htbl[3] = "Tutorials";
 
-            ArrayList arrlist = new ArrayList();
-            arrlist.Add("Welcome");
-            arrlist.Add(100);
-            arrlist.Add(20.5f);
-            arrlist.Add("Tutlane");
-            arrlist.Add(200);
-            arrlist.Add(300);
-            arrlist.Add(400);
-            
-            Console.WriteLine("Item Exists: " + arrlist.Contains(500));
+            try
+            {
+                htbl.Add(2, 100);
+            }
+
+            catch
+            {
+                Console.WriteLine("An element with key = '2' already exists");
+            }
+
+            foreach(DictionaryEntry item in htbl)
+            {
+                Console.WriteLine("Key = {0}, Value = {1}", item.Key, item.Value);
+            }
         }
     }
 }
