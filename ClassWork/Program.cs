@@ -61,12 +61,8 @@ namespace ClassWork
             stk.Push(null);
             stk.Push(100);
 
-            Console.WriteLine("Number of elements in the stack: {0}", stk.Count);
-
-            Console.WriteLine(stk.Peek());
-            Console.WriteLine(stk.Peek());
-            Console.WriteLine(stk.Peek());
-            Console.WriteLine("Number of elements in the stack: {0}", stk.Count);
+            Console.WriteLine("Contains element 4: {0}", stk.Contains(4));
+            Console.WriteLine("Contains element at 100: {0}", stk.Contains(100));
         }
     }
 }
