@@ -60,12 +60,8 @@ namespace ClassWork
             que.Enqueue(10);
             que.Enqueue(100);
 
-            Console.WriteLine("Number of elements in a queue: {0}", que.Count);
-
-            Console.WriteLine(que.Peek());
-            Console.WriteLine(que.Peek());
-            Console.WriteLine(que.Peek());
-            Console.WriteLine("Number of elements in a queue: {0}", que.Count);
+            Console.WriteLine("Contains element 4: {0}", que.Contains(4));
+            Console.WriteLine("contains element 100: {0}", que.Contains(100));
         }
     }
 }
