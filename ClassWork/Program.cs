@@ -62,10 +62,12 @@ namespace ClassWork
             stk.Push(100);
 
             Console.WriteLine("Number of elements in the stack: {0}", stk.Count);
-            foreach (var item in stk)
+            while (stk.Count > 0)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(stk.Pop());
             }
+
+            Console.WriteLine("Number of elements in the stack: {0}", stk.Count);
         }
     }
 }
