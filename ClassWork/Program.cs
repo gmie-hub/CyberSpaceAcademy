@@ -60,13 +60,10 @@ namespace ClassWork
             htbl.Add(2, 10);
             htbl[3] = "Tutorials";
 
-            string msg = (string)htbl["msg"];
-            float num = (float)htbl[1];
+            htbl.Remove("msg");
+            htbl.Remove(1);
 
-            Console.WriteLine("Access element with key***");
-            Console.WriteLine("Value at Key 'msg': " + msg);
-            Console.WriteLine("Value at Key 1: " + num);
-
+          
             Console.WriteLine("***Access element using foreach loop");
             foreach(DictionaryEntry item in htbl)
             {
