@@ -61,16 +61,8 @@ namespace ClassWork
             arrlist.Add(200);
             arrlist.Add(300);
             arrlist.Add(400);
-
-            arrlist.Remove(20.5f);
-            arrlist.RemoveAt(0);
-            arrlist.RemoveRange(3, 2);
             
-            Console.WriteLine("***Array list***");
-            foreach(var item in arrlist)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine("Item Exists: " + arrlist.Contains(500));
         }
     }
 }
