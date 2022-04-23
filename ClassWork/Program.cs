@@ -53,16 +53,18 @@ namespace ClassWork
 
             //}
            
-            Hashtable htbl = new Hashtable();
-            htbl.Add("msg", "Welcome");
-            htbl.Add("site", "tutlane");
-            htbl.Add(1, 20.5f);
-            htbl.Add(2, 10);
-            htbl[3] = "Tutorials";
+            Queue que = new Queue();
+            que.Enqueue("Welcome");
+            que.Enqueue("Tutlane");
+            que.Enqueue(20.5f);
+            que.Enqueue(10);
+            que.Enqueue(100);
 
-            Console.WriteLine("Contains Key 4: {0}", htbl.Contains(4));
-            Console.WriteLine("Contains key 2: {0}", htbl.ContainsKey(2));
-            Console.WriteLine("Cotains Value 'tutlane': {0}", htbl.ContainsValue("Tutlane"));
+            Console.WriteLine("Number of elements in a queue: {0}", que.Count);
+            foreach (var item in que)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
