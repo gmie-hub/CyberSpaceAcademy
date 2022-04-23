@@ -58,13 +58,14 @@ namespace ClassWork
             arrlist.Add(100);
             arrlist.Add(20.5f);
             arrlist.Add("Tutlane");
+            arrlist.Add(200);
+            arrlist.Add(300);
+            arrlist.Add(400);
 
-            arrlist.Insert(0, "Hi");
-            arrlist.Insert(1, 50);
-
-            ArrayList arrlist1 = new ArrayList() {200, 300};
-            arrlist.InsertRange(2, arrlist1);
-
+            arrlist.Remove(20.5f);
+            arrlist.RemoveAt(0);
+            arrlist.RemoveRange(3, 2);
+            
             Console.WriteLine("***Array list***");
             foreach(var item in arrlist)
             {
