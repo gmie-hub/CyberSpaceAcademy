@@ -56,23 +56,33 @@ namespace ClassWork
             Hashtable htbl = new Hashtable();
             htbl.Add("msg", "Welcome");
             htbl.Add("site", "tutlane");
-            htbl.Add(1, 20.5);
-            htbl.Add(2, null);
+            htbl.Add(1, 20.5f);
+            htbl.Add(2, 10);
             htbl[3] = "Tutorials";
 
-            try
-            {
-                htbl.Add(2, 100);
-            }
+            string msg = (string)htbl["msg"];
+            float num = (float)htbl[1];
 
-            catch
-            {
-                Console.WriteLine("An element with key = '2' already exists");
-            }
+            Console.WriteLine("Access element with key***");
+            Console.WriteLine("Value at Key 'msg': " + msg);
+            Console.WriteLine("Value at Key 1: " + num);
 
+            Console.WriteLine("***Access element using foreach loop");
             foreach(DictionaryEntry item in htbl)
             {
-                Console.WriteLine("Key = {0}, Value = {1}", item.Key, item.Value);
+                Console.WriteLine("Key = {0}, Value = {1}", item.Key, item.Value);    
+            }
+
+            Console.WriteLine("***Hashtable keys***");
+            foreach(var item in htbl.Keys)
+            {
+                Console.WriteLine("Key = {0}", item);
+            }
+
+            Console.WriteLine("***Hashtable value***");
+            foreach(var item in htbl.Values)
+            {
+                Console.WriteLine("Value = {0}", item);
             }
         }
     }
