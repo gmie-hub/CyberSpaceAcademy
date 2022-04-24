@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 
 namespace ClassWork
 {
@@ -53,16 +53,30 @@ namespace ClassWork
 
             //}
            
-           Stack stk = new Stack(); 
-            stk.Push("Welcome");
-            stk.Push("Tutlane");
-            stk.Push(20.5f);
-            stk.Push(10);
-            stk.Push(null);
-            stk.Push(100);
+            List<int> lst = new List<int>();
+            lst.Add(1);
+            lst.Add(8);
+            lst.Add(45);
 
-            Console.WriteLine("Contains element 4: {0}", stk.Contains(4));
-            Console.WriteLine("Contains element at 100: {0}", stk.Contains(100));
+            List<string> lst2 = new List<string>();
+            lst2.Add("Hi");
+            lst2.Add("Welcome");
+            lst2.Add("to");
+            lst2.Add("tutlane");
+
+            Console.WriteLine("List1 element count: " + lst.Count);
+            Console.WriteLine("list1 Capacity: " + lst.Capacity);
+            foreach(int item in lst)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("List2 Count: " + lst2.Count);
+            Console.WriteLine("List2 Capacity: " + lst2.Capacity);
+            foreach (string item in lst2)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
