@@ -14,12 +14,10 @@ namespace ClassWork
         static void Main()
         {
 
-            List<int> lst = new List<int>() { 1, 8, 45, 70};
-            lst.Insert(0, 10);
-            lst.Insert(3, 20);
-
-            List<int> lst2 = new List<int>() { 200, 300 };
-            lst.InsertRange(2, lst2);
+            List<int> lst = new List<int>() { 1, 20, 30, 40, 50, 60, 70, 80};
+            lst.Remove(50);
+            lst.RemoveAt(2);
+            lst.RemoveRange(3, 2);
 
             foreach (var item in lst)
             {
