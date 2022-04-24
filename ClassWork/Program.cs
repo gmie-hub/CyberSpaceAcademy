@@ -15,26 +15,23 @@ namespace ClassWork
         {
 
             List<int> lst = new List<int>() { 1, 8, 45, 70};
-            Console.WriteLine("Element at 0: " + lst[0]);
-            Console.WriteLine("Element at 2: " + lst[2]);
+            lst.Insert(0, 10);
+            lst.Insert(3, 20);
 
-            List<User> user = new List<User>()
+            List<int> lst2 = new List<int>() { 200, 300 };
+            lst.InsertRange(2, lst2);
+
+            foreach (var item in lst)
             {
-                new User{Id = 1, Name = "Jimi", Location = "Lagos"},
-                new User{Id = 1, Name = "Sola", Location = "Ogun"},
-                new User{Id = 1, Name = "Daniel", Location = "Rivers"},
-                new User{Id = 1, Name = "Lateef", Location = "Ibadan"}
-            };
-
-            for (int i = 0; i < user.Count; i++)
-                Console.WriteLine("Id: {0}, Name: {1}, Location: {2} ", user[i].Id, user[i].Name, user[i].Location);
-
-            Console.WriteLine();
-
-            foreach(var u in user)
-            {
-                Console.WriteLine("Id: {0}, Name: {1}, Location: {2} ", u.Id, u.Name, u.Location);
+                Console.WriteLine(item);
             }
+
+
+
+
+
+
+           
             //Console.WriteLine("This application convert dollar, pound and euro to naira");
 
             //Console.WriteLine("Enter currency");
