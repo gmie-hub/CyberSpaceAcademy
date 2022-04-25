@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace CyberSpaceAcademy
 {
-    public class Product 
+    public class Product : IOrder
     {
         public string Name { get; set; }
         public int Quantity { get; set; }
+        public int Order { get; set; }
 
         public override string ToString()
         {
@@ -18,20 +19,28 @@ namespace CyberSpaceAcademy
         }
     }
 
-    public class SortProduct : IComparer<Product>
+    public class SortProduct<T> : IComparer<T>  where T : IOrder 
     {
-        public int Compare(Product x, Product y)
+        public int Compare(T x, T y)
         {
 
-            if(x.Quantity < y.Quantity)
+            if(x.Order < y.Order)
                 return 1;
-            if (x.Quantity > y.Quantity)
+            if (x.Order > y.Order)
                 return -1;
             else
                 return 0;
 
         }
+
     }
+
+    public interface IOrder
+    {
+        int Order { get; set; }
+    }
+
+ 
 
     //public class SortNameProduct : IComparer<Product>
     //{

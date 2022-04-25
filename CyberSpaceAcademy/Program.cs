@@ -9,7 +9,7 @@ namespace CyberSpaceAcademy
         public static void Main()
         {
 
-            List<Product> prod = new List<Product>()
+            var prod = new List<Product>()
             {
                 new Product(){Name = "Milo", Quantity = 10},
                  new Product(){Name = "Peak", Quantity = 12},
@@ -23,10 +23,10 @@ namespace CyberSpaceAcademy
                          new Product(){Name = "Perfume", Quantity = 1},
             };
 
-            prod.Sort(new SortProduct());
+            prod.Sort(new SortProduct<Product>());
             foreach (var p in prod)
             {
-                Console.WriteLine("{0}\t{1} ", p.Name, p.Quantity);
+                Console.WriteLine(p);
             }
             Console.WriteLine();
 
