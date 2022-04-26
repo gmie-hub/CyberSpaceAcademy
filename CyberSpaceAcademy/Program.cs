@@ -9,40 +9,20 @@ namespace CyberSpaceAcademy
         public static void Main()
         {
 
-            var prod = new List<Product>()
-            {
-                new Product(){Name = "Milo", Quantity = 10},
-                 new Product(){Name = "Peak", Quantity = 12},
-                  new Product(){Name = "Sugar", Quantity = 3},
-                   new Product(){Name = "Indomie", Quantity = 60},
-                    new Product(){Name = "Soap", Quantity = 5},
-                     new Product(){Name = "Cream", Quantity = 2},
-                      new Product(){Name = "Shoe", Quantity = 3},
-                       new Product(){Name = "Brush", Quantity = 2},
-                        new Product(){Name = "Biscuit", Quantity = 30},
-                         new Product(){Name = "Perfume", Quantity = 1},
-            };
+            int result = 0;
+            Func<int, int, int> func = Add;
+            result = func(10, 9);
+            Console.WriteLine("Add result: {0}", result);
 
-            prod.Sort(new SortProduct<Product>());
-            foreach (var p in prod)
-            {
-                Console.WriteLine(p);
-            }
-            Console.WriteLine();
+            func = Subtract;
+            result = func(10, 9);
+            Console.WriteLine("Subtract result: {0}", result);
 
             //prod.Sort(new SortNameProduct());
             //foreach(var p in prod)
             //{
             //    Console.WriteLine("{0}\t{1} ", p.Name, p.Quantity);
             //}
-            
-            
-            
-            
-            
-            
-            
-            
             //var employees = new Employee[]
             //{
             //    new Employee(){FullName = "Warren Buffet"},
@@ -67,6 +47,16 @@ namespace CyberSpaceAcademy
 
             //Console.WriteLine();
 
+        }
+
+        public static int Add(int a, int b)
+        {
+            return a + b;
+        }
+
+        public static int Subtract(int x, int y)
+        {
+            return x - y;
         }
     }
 }
