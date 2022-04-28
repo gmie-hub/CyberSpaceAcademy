@@ -42,7 +42,7 @@ namespace ClassWork
             Console.WriteLine();
 
             var word2 = emp.Where(x => x.Gender == "F")
-                           .OrderBy(x => x.Gender);
+                           .OrderBy(x => x.Id);
                           
             foreach (var item in word2)
             {
@@ -51,8 +51,8 @@ namespace ClassWork
             }
             Console.WriteLine();
 
-            var word3 = emp.Where(x => x.Age == 20 || x.Age == 30 || x.Age == 35)
-                           .OrderBy(x => x.Age);
+            var word3 = emp.Where(x => x.Age == 20 || x.Age == 30 || x.Age == 35);
+                           //.OrderBy(x => x.Name);
 
             foreach (var item in word3)
             {
@@ -62,13 +62,25 @@ namespace ClassWork
 
             Console.WriteLine();
 
-            var word4 = emp.Where(x => x.Id > 1 && x.Id < 8 )
-                           .OrderBy(x => x.Id);
+            var word4 = emp.Where(x => x.Gender.Contains("F"))      
+                           .Where(x => x.Id > 1 && x.Id < 8);
+                          
             foreach (var item in word4)
             {
                 Console.WriteLine($"Id: {item.Id}   Name: {item.Name}  " +
                     $"  Age: {item.Age}    Gender: {item.Gender}    Salary: {item.Salary}");
             }
+
+
+
+
+
+
+
+
+
+
+
             //var pro = new List<Product>();
             //pro.Add(new Product { Name = "Biro", Price = 100, Quantity = 5, Places = "Lagos" });
             //pro.Add(new Product { Name = "chalk", Price = 1000, Quantity = 3, Places = "Lagos" });
